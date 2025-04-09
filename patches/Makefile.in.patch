@@ -1,0 +1,13 @@
+diff --git i/Makefile.in w/Makefile.in
+index ad0715a..2c92cad 100644
+--- i/Makefile.in
++++ w/Makefile.in
+@@ -20,7 +20,7 @@ objs = arg_parser.o lzip_index.o list.o encoder_base.o encoder.o \
+ all : $(progname)
+ 
+ $(progname) : $(objs)
+-	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ $(objs)
++	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ $(objs) $(LIBS)
+ 
+ main.o : main.cc
+ 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -DPROGVERSION=\"$(pkgversion)\" -c -o $@ $<
