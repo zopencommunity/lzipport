@@ -1,5 +1,5 @@
 # Update bump details accordingly. Use bump check to confirm.
-# bump: lzip-version /LZIP_VERSION="(.*)"/ https://download.savannah.gnu.org/releases/lzip/lzip-1.25.tar.gz|semver:*
+# bump: lzip-version /LZIP_VERSION="(.*)"/ https://download.savannah.gnu.org/releases/lzip/|re:/lzip-([\d.]+)\.tar\.gz/$1/|semver:*
 # LZIP_VERSION="V.R.M" # Specify a stable release
 # export ZOPEN_STABLE_TAG="v${LZIP_VERSION}"
 
@@ -86,8 +86,8 @@ zopen_get_version()
 #}
 
 #zopen_append_to_validate_install(){
-  ## This function runs as part of generation of the install_test.sh file. The
-  ## output of the function is appended to install_test.sh script.
+  ## This function runs as part of generation of the install_test.sh script. The output of
+  ## the function is appended to install_test.sh.
 #}
 
 #zopen_install_caveats(){
@@ -96,7 +96,7 @@ zopen_get_version()
 #}
 
 #zopen_append_to_zoslib_env(){
-  ## This function runs as part of generation of the C function zoslib_env_hook,
+  ## This function is run as part of generation of the C function zoslib_env_hook,
   ## which can be used to set environment variables before main is run.
 #}
 
@@ -174,5 +174,4 @@ zopen_get_version()
 ###
 
 ## Add user-defined functions and code
-
 
