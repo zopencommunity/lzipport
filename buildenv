@@ -1,6 +1,6 @@
 # Update bump details accordingly. Use bump check to confirm.
 # bump: lzip-version /LZIP_VERSION="(.*)"/ https://download.savannah.gnu.org/releases/lzip/|re:/lzip-([\d.]+)\.tar\.gz/$1/|semver:*
-LZIP_VERSION="V.R.M" # Specify a stable release
+LZIP_VERSION="1.26" # Specify a stable release
 
 ###
 ### Build control file for the lzip port
