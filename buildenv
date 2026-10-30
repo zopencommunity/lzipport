@@ -86,8 +86,8 @@ zopen_get_version()
 #}
 
 #zopen_append_to_validate_install(){
-  ## This function runs as part of generation of the install_test.sh script. The output of
-  ## the function is appended to install_test.sh.
+  ## This function runs as part of generation of the install_test.sh file. The output of the
+  ## function is appended to install_test.sh script.
 #}
 
 #zopen_install_caveats(){
@@ -96,7 +96,7 @@ zopen_get_version()
 #}
 
 #zopen_append_to_zoslib_env(){
-  ## This function is run as part of generation of the C function zoslib_env_hook,
+  ## This function runs as part of generation of the C function zoslib_env_hook,
   ## which can be used to set environment variables before main is run.
 #}
 
@@ -174,4 +174,3 @@ zopen_get_version()
 ###
 
 ## Add user-defined functions and code
-
