@@ -1,7 +1,6 @@
 # Update bump details accordingly. Use bump check to confirm.
-# bump: lzip-version /LZIP_VERSION="(.*)"/ https://download.savannah.gnu.org/releases/lzip/lzip-1.25.tar.gz|semver:*
-# LZIP_VERSION="V.R.M" # Specify a stable release
-# export ZOPEN_STABLE_TAG="v${LZIP_VERSION}"
+# bump: lzip-version /LZIP_VERSION="(.*)"/ https://download.savannah.gnu.org/releases/lzip/|re:/lzip-([\d.]+)\.tar\.gz/$1/|semver:*
+LZIP_VERSION="V.R.M" # Specify a stable release
 
 ###
 ### Build control file for the lzip port
@@ -15,7 +14,7 @@
 export ZOPEN_BUILD_LINE="STABLE"
 
 ## Required IF ZOPEN_BUILD_LINE='STABLE'
-export ZOPEN_STABLE_URL="https://download.savannah.gnu.org/releases/lzip/lzip-1.25.tar.gz"  # Specify the stable build URL (either git or tarball)
+export ZOPEN_STABLE_URL="https://download.savannah.gnu.org/releases/lzip/lzip-${LZIP_VERSION}.tar.gz"  # Specify the stable build URL (either git or tarball)
 export ZOPEN_STABLE_DEPS="zoslib make coreutils gawk" # Specify the stable build dependencies.
 
 ## Required IF ZOPEN_BUILD_LINE='DEV'
@@ -86,8 +85,8 @@ zopen_get_version()
 #}
 
 #zopen_append_to_validate_install(){
-  ## This function runs as part of generation of the install_test.sh file. The
-  ## output of the function is appended to install_test.sh script.
+  ## This function runs as part of generation of the install_test.sh file. The output of the
+  ## function is appended to install_test.sh script.
 #}
 
 #zopen_install_caveats(){
@@ -174,5 +173,3 @@ zopen_get_version()
 ###
 
 ## Add user-defined functions and code
-
-
